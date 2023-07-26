@@ -1,4 +1,4 @@
-name: 4 - Formulas Scheduler (Container)
+name: Test Container
 
 on:
    workflow_dispatch:
