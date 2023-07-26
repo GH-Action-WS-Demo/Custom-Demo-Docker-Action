@@ -1,0 +1,15 @@
+name: 4 - Formulas Scheduler (Container)
+
+on:
+   workflow_dispatch:
+
+jobs:
+  build:
+      runs-on: ubuntu-latest
+      container:
+        image: docker://guillaumefalourd/ritchiecli:go-1.15.8
+      steps:
+        - name: Ritchie Formula Hello World (Golang) Execution
+          run: |
+             sudo rit add repo --provider="Github" --name="demo" --repoUrl="https://github.com/ZupIT/ritchie-formulas-demo" --priority=1
+             sudo rit demo hello-world --rit_input_text="Dennis" --rit_input_boolean=true --rit_input_list="everything" --rit_input_password="Ritchie"
