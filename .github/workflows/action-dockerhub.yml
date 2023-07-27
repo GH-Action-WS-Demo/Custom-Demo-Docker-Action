@@ -6,9 +6,10 @@ on:
 jobs:
   build:
       runs-on: ubuntu-latest
-      container:
-        image: docker://guillaumefalourd/ritchiecli:go-1.15.8
+      #container:
+        #image: docker://guillaumefalourd/ritchiecli:go-1.15.8
       steps:
+        - uses: docker://guillaumefalourd/ritchiecli:go-1.15.8
         - name: Ritchie Formula Hello World (Golang) Execution
           run: |
              sudo rit add repo --provider="Github" --name="demo" --repoUrl="https://github.com/ZupIT/ritchie-formulas-demo" --priority=1
